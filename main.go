@@ -1,25 +1,23 @@
-# Evalucion_Gooland_Francisco_Muela
-
 package main
 
 import "fmt"
 
-// 1. Variables globales (slices)
+
 var nombresProductos []string
 var subtotales []float64
 
-// 2. Función para registrar una venta
+
 func RegistrarVenta(nombre string, precio float64, cantidad int) {
 	subtotal := precio * float64(cantidad)
 	
-	// Guardamos en las variables globales
+	
 	nombresProductos = append(nombresProductos, nombre)
 	subtotales = append(subtotales, subtotal)
 	
 	fmt.Println("¡Venta registrada con éxito! Subtotal:", subtotal)
 }
 
-// 3. Función para mostrar estadísticas
+
 func MostrarEstadisticas() {
 	if len(nombresProductos) == 0 {
 		fmt.Println("No existen ventas registradas.")
@@ -35,12 +33,12 @@ func MostrarEstadisticas() {
 	fmt.Println("Total recaudado:", totalRecaudado)
 }
 
-// 4. Función principal con menú
+
 func main() {
 	var opcion int
 
 	for {
-		// Menú principal
+	
 		fmt.Println("\n=== MENÚ ===")
 		fmt.Println("1. Registrar una nueva venta")
 		fmt.Println("2. Mostrar estadísticas")
@@ -50,7 +48,7 @@ func main() {
 		fmt.Scan(&opcion)
 
 		if opcion == 1 {
-			// 5. Registro de ventas
+			
 			fmt.Println("\n--- PRODUCTOS DISPONIBLES ---")
 			fmt.Println("1. Arroz ($1.25)")
 			fmt.Println("2. Leche ($0.95)")
@@ -64,7 +62,7 @@ func main() {
 			fmt.Print("Ingrese la cantidad vendida: ")
 			fmt.Scan(&cantidad)
 
-			// Dependiendo de lo que elija, llamamos a la función con su precio fijo
+			
 			if seleccion == 1 {
 				RegistrarVenta("Arroz", 1.25, cantidad)
 			} else if seleccion == 2 {
@@ -80,7 +78,7 @@ func main() {
 
 		} else if opcion == 3 {
 			fmt.Println("Saliendo del programa...")
-			break // Rompe el ciclo y termina el programa
+			break
 
 		} else {
 			fmt.Println("Opción no válida. Intente de nuevo.")
